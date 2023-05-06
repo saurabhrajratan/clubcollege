@@ -1,0 +1,14 @@
+{%extends 'base.html'%}
+{% block ctitle %}Show Image Details{% endblock %}
+{% block jinjabody %}
+
+<img src="{{iobj.iurl}}" size="auto" alt="">
+<br>
+<button type="button" class="btn btn-outline-primary">{{iobj.iname}}</button>
+<button type="button" class="btn btn-outline-secondary">{{iobj.idesc}}</button>
+<br>
+<a href="/{{iobj.iid}}/edit"><button type="button" class="btn btn-warning">Edit</button>
+</a>
+<a href=""><a href="/delete/{{iobj.iid}}"><button type="button" class="btn btn-danger">Delete</button>
+</a>
+{% endblock jinjabody %}

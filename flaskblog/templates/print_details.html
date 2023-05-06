@@ -1,0 +1,13 @@
+{%extends 'base.html'%}
+{% block ctitle %}Create Page{% endblock ctitle %}
+{% block jinjabody %}
+{% for obj in list %}
+    <img src="{{obj.iurl}}" alt="">
+    <br>
+    {{loop.index}}.
+    {{obj.iname}}
+    {{obj.idesc}}
+    <br>
+{% endfor %}
+
+{% endblock jinjabody %}

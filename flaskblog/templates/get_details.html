@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block ctitle %}Login{% endblock ctitle %}
+{% block jinjabody %}
+<h2 style='color:rgb(5, 65, 65)'>🧑‍🚒Practice</h2>
+<h3 style='color:rgb(5, 65, 65)'>👩‍⚕️Exam Prep</h3>
+<h4 style='color:rgb(5, 65, 65)'>📉Exam Papers at one place📉</h4>
+<!-- <form action="/add_to_db" method='POST'>
+    <label for="">
+        <h5>Enter Image Name</h5>
+    </label>
+    <input type="text" id='i_name' name='image_name'><br>
+    <label for="">
+        <h5>Enter url</h5>
+    </label>
+    <input type="text" id='url' name='image_url'><br><br>
+    <label for="">
+      <h5>Enter Description of image</h5>
+  </label>
+  <input type="text" id='desc' name='image_desc'><br><br>
+    <input type="submit" value="Add Image"><br>
+</form> -->
+<br>
+<div class="container">
+    <form action="/add_to_db" method='POST'>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Image Name</label>
+          <input type="text" class="form-control" name='image_name' aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Image url</label>
+          <input type="text" class="form-control" name='image_url'>
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">Image Description</label>
+            <input type="text" class="form-control" name='image_desc'>
+          </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+{% endblock jinjabody %}

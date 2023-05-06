@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block ctitle %}
+Edit Details
+{% endblock %}
+{% block jinjabody %}
+
+<form action="/{{iobj.iid}}/edit" method = 'POST'>
+    <input type="text" value="{{iobj.iname}}" name="iname">
+    <br>
+    <input type="text" value="url" name="iurl">
+    <br>
+    <input type="text" value="{{iobj.idesc}}" name="idesc">
+    <br>
+    <input type="submit" value="Edit">
+</form>
+<img src="{{iobj.iurl}}" alt="">
+{% endblock %}
