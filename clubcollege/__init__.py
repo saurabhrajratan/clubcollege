@@ -16,4 +16,4 @@ login_manager.login_message_category = 'info'
 def create_tables():
     db.create_all()
     
-from flaskblog import routes
+from clubcollege import routes

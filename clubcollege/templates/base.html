@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NIT Mizoram</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css')}}">
+    <script src="{{url_for('static', filename='js/test.js')}}"></script>
+    <title>{% block ctitle %}
+
+        {% endblock %}-Examified
+    </title>
+    </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <nav class="navbar navbar-expand-lg bg-steel">
+      <div class="container">
+        <a class="navbar-brand" href="/">Back</a>
+        <a class="navbar-brand" href="/pyq"><h4>ClubCollege</h4></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <!-- <a class="nav-link active" aria-current="page" href="/get_details">Add Exam Papers</a> -->
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/print_details">View Papers</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="https://www.nitmz.ac.in" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                More
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Download Paper</a></li>
+                <li><a class="dropdown-item" href="#">Upload Solution</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="https://www.nitmz.ac.in">Discuss</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search" action="/search" method='POST'>
+            <input class="form-control me-2" type="search"  aria-label="Search" name = "iname">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <!-- <h3>Exam Papers</h3> -->
+      <a class="navbar-brand" href="/pyq"><h5>Exam Papers</h5></a>
+      {%block jinjabody%}
+
+      {%endblock jinjabody%}
+    </div>
+
+    <footer class="bg-dark text-white pt-5 pb-4">
+      <div class="container text-center text-md-left">
+          <div class="row text-center text-md-left">
+              <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                  <h5 class="text-uppercase mb-4 font-weight-bold text-warning">ClubCollege</h5>
+                  <p>Block-5, Department of CSE</p>
+                  <p>NIT Mizoram</p>
+                  <p>Chaltlang, Aizawl-796012</p>
+              </div>
+              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                  <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Products</h5>
+                  <p>
+                      <a href="/home" class="text-white" style="text-decoration: none;">Home Page</a>
+                  </p>
+                  <p>
+                    <a href="{{ url_for('logout') }}" class="text-white" style="text-decoration: none;">Log Out</a>
+                </p>
+                  <p>
+                      <a href="/pyq" class="text-white" style="text-decoration: none;">Previous Year Papers</a>
+                  </p>
+              </div>
+              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                  <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Useful Links</h5>
+                  <p>
+                      <a href="/home" class="text-white" style="text-decoration: none;">Your Account</a>
+                  </p>
+                  <p>
+                    <a href="https://www.nitmz.ac.in" class="text-white" style="text-decoration: none;">NIT Mizoram</a>
+                </p>
+                  <p>
+                      <a href="https://www.nitmz.ac.in/CPT_AND_PDeptHome.aspx?page=a&ItemID=kk&nDeptID=ei" class="text-white" style="text-decoration: none;">Training & Placements</a>
+                  </p>
+              </div>
+              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                  <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contacts</h5>
+                  <p>
+                      <i class="fas fa-home mr-3"></i>Chaltland, Aizawl, Mizoram
+                  </p>
+                  <p>
+                      <i class="fas fa-envelope mr-3"></i>nit_mizoram@nitmz.ac.in
+                  </p>
+                  <p>
+                      <i class="fas fa-phone mr-3"></i>0389-2391774 / 0389-2391699
+                  </p>
+                  <p>
+                      <i class="fas fa-print mr-3"></i>0389-2391236 
+                  </p>
+              </div>
+          </div>
+          <hr class="mb-4">
+          <div class="row align-items-center">
+              <div class="col-md-7 col-lg-8">
+                  <p>Copyright © 2023. All Right Reserved. Designed & Developed by Saurabh Raj Ratan
+                      <a href="" style="text-decoration: none;">
+                      <strong class="text-warning">NIT Mizoram</strong>
+                      </a> 
+                  </p>
+              </div>
+              <div class="col-md-5 col-lg-4">
+                  <div class="text-center text-md-right">
+                      <ul class="list-unstyle list-inline">
+                          <li>
+                              <a href="https://www.facebook.com/people/National-Institute-of-Technology-Mizoram/100068020644912/" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="fab fa-facebook"></i></a>
+                          </li>
+                          <li>
+                              <a href="https://twitter.com/NIT_Mizoram" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="fab fa-twitter"></i></a>
+                          </li>
+                          <li>
+                              <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="fab fa-google-plus"></i></a>
+                          </li>
+                          <li>
+                              <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="fab fa-linkedin-in"></i></a>
+                          </li>
+                          <li>
+                              <a href="https://www.youtube.com/watch?v=E0DwX-ix54g" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="fab fa-youtube"></i></a>
+                          </li>
+                      </ul>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>
+  </body>
+</html>
